@@ -1,0 +1,58 @@
+  .open {
+      width:50px;
+      margin: 10px 0;
+      padding: 10px;
+      background:#66CC99;
+      cursor: pointer;
+  }
+
+  #slideBox {
+      display:none;
+      padding: 10px;
+      border: 1px solid #BFFFBF;
+  }
+
+  .selected {
+      background: #CCC;
+  }
+
+  #carouselWrap{
+      margin:10px auto;
+      width:470px;
+      height:135px;
+      padding:5px;
+      border:1px solid #DBDBDB;
+      position:relative;
+  }
+  #carouselPrev{
+      position:absolute;
+      top:65px;
+      left:-13px;
+      cursor:pointer;
+  }
+  #carouselNext{
+      position:absolute;
+      top:65px;
+      right:-13px;
+      cursor:pointer;
+  }
+  #carouse{
+      width:100%;
+      height:100%;
+      overflow:hidden;
+  }
+  #carouselInner ul.column{
+      width:455px;
+      height:105px;
+      padding:15px 0 15px 15px;
+      list-style-type:none;
+      float:left;
+  }
+  #carouselInner ul.column li{
+      float:left;
+      margin-right:10px;
+      display:inline;
+  }
+  #carouselInner ul.column li img{
+      border:none;
+  }

@@ -1,37 +1,168 @@
-<!DOCTYPE html>
-<html lang="ja" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></script>
-  </head>
-  <body>
-    <a href="#slide" class="scroll">スライドパネルへ移動！</a>
-    <h1>タイトル</h1><h1>タイトル</h1><h1>タイトル</h1><h1>タイトル</h1><h1>タイトル</h1><h1>タイトル</h1><h1>タイトル</h1><h1>タイトル</h1>
-    <h1>タイトル</h1><h1>タイトル</h1><h1>タイトル</h1><h1>タイトル</h1><h1>タイトル</h1><h1>タイトル</h1><h1>タイトル</h1><h1>タイトル</h1>
-    <h1>タイトル</h1><h1>タイトル</h1><h1>タイトル</h1><h1>タイトル</h1><h1>タイトル</h1><h1>タイトル</h1><h1>タイトル</h1><h1>タイトル</h1>
-    <h1 id="slide">タイトル</h1>
-
-
-
-  <script>
-  jQuery.easing.quart = function (x, t, b, c, d) {
-      return -c * ((t=t/d-1)*t*t*t - 1) + b;
-  };
-
-  $(function(){
-      jQuery('.scroll').click(function() {
-          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-              var $target = jQuery(this.hash);
-              $target = $target.length && $target || jQuery('[name=' + this.hash.slice(1) +']');
-              if ($target.length) {
-              var targetOffset = $target.offset().top;
-              jQuery('html,body').animate({ scrollTop: targetOffset }, 1200, 'quart');
-              return false;
-              }
-          }
-      });
-  });
+    <!DOCTYPE html>
+    <html lang="ja" dir="ltr">
+      <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="stylesheet.css">
+        <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></script>
   </script>
-  </body>
-</html>
+      </head>
+      <body>
+        <a href="#slide" class="scroll">スライドパネルへ移動！</a>
+        <br>
+        <a href="#"><img src="images/button_off.jpg" alt="ボタン" /></a>
+        <br>
+        <a href="#" class="oc"><img src="images/button.png" alt="ボタン" /></a>
+        <br>
+        <dl id="accordion">
+        <dt><a href="">メニュー1</a></dt>
+        <dd>
+            <a href="#">サブメニュー1-1</a>
+            <a href="#">サブメニュー1-2</a>
+        </dd>
+        <dt><a href="">メニュー2</a></dt>
+        <dd>
+            <a href="#">サブメニュー2-1</a>
+            <a href="#">サブメニュー2-2</a>
+        </dd>
+        <dt><a href="">メニュー3</a></dt>
+        <dd>
+            <a href="#">サブメニュー3-1</a>
+            <a href="#">サブメニュー3-2</a>
+        </dd>
+    </dl>
+    <p class="open">ボタン</p>
+    <div id="slideBox">
+    スライドパネルのサンプルです。ボタンを押すと閉じたり、開いたりします。 スライドパネルのサンプルです。ボタンを押すと閉じたり、開いたりします。スライドパネルのサンプルです。ボタンを押すと閉じたり、開いたりします。スライドパネルのサンプルです。ボタンを押すと閉じたり、開いたりします。
+    </div>
+
+    <ul id="tabs">
+    <li><a href="#tab01">タブ1</a></li>
+    <li><a href="#tab02" >タブ2</a></li>
+    <li><a href="#tab03" >タブ3</a></li>
+    </ul>
+
+    <div id="tab01" class="panel">内容1です。jQueryってとっても便利ですよね。簡単にいろんな動きが実装できるし、クロスブラウザにもなるし。ほんとうに素晴らしいです。</div>
+    <div id="tab02" class="panel">内容2です。簡単なコードなら、自分で書けるようになるとより便利です。CSSのセレクタを利用するので、コーダーやWebデザイナーにもやさしいです。</div>
+    <div id="tab03" class="panel">内容3です。最近は、jQuery Mobileも登場していますね。ある程度カスタマイズもできるので、時間がないときは利用すると、すばやくスマートフォン用のサイトが作れます。でも、フルカスタマイズするとなると、1から作ったほうが早い場合もあるようなので、使いどころを見極めることが重要です。</div>
+
+
+    <div class="photo">
+        <p>基本ver.</p>
+        <p id="main"><img src="images/main3.jpg" alt="サンプル画像" width="350" height="225"></p>
+        <p id="thumb">
+        <a href="images/main1.jpg" class="oc"><img src="images/thumb1.jpg" alt="サムネイル"></a>
+        <a href="images/main2.jpg" class="oc" style="opacity: 1;"><img src="images/thumb2.jpg" alt="サムネイル"></a>
+        <a href="images/main3.jpg" class="oc" style="opacity: 1;"><img src="images/thumb3.jpg" alt="サムネイル"></a>
+        </p>
+    </div>
+
+    <div class="photo">
+    <p>アニメーションありver.</p>
+    <p id="main02"><img src="images/main3.jpg" alt="サンプル画像" width="350" height="225" style="opacity: 1;"></p>
+    <p id="thumb02">
+    <a href="images/main1.jpg" class="oc" style="opacity: 1;"><img src="images/thumb1.jpg" alt="サムネイル"></a>
+    <a href="images/main2.jpg" class="oc" style="opacity: 1;"><img src="images/thumb2.jpg" alt="サムネイル"></a>
+    <a href="images/main3.jpg" class="oc" style="opacity: 1;"><img src="images/thumb3.jpg" alt="サムネイル"></a>
+    </p>
+    </div>
+
+
+    <h1 id="slide">スライド</h1>
+
+
+
+      <script>
+      //1.スムーススクロール
+      jQuery.easing.quart = function (x, t, b, c, d) {
+          return -c * ((t=t/d-1)*t*t*t - 1) + b;
+      };
+
+      $(function(){
+          jQuery('.scroll').click(function() {
+              if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                  var $target = jQuery(this.hash);
+                  $target = $target.length && $target || jQuery('[name=' + this.hash.slice(1) +']');
+                  if ($target.length) {
+                  var targetOffset = $target.offset().top;
+                  jQuery('html,body').animate({ scrollTop: targetOffset }, 1200, 'quart');
+                  return false;
+                  }
+              }
+          });
+      });
+
+      //2.マウスオーバー時の画像切替
+      $(function(){
+        $('a img').hover(function(){
+        $(this).attr('src', $(this).attr('src').replace('_off', '_on'));
+        }, function(){
+            if (!$(this).hasClass('currentPage')) {
+            $(this).attr('src', $(this).attr('src').replace('_on', '_off'));
+            }
+        });
+    });
+
+    //3.マウスオーバー時の画像の透明度変更
+    $(function(){
+    $(".oc").hover(function(){
+    //$(a img).hover(function(){ ←すべてのリンク付き画像に適応
+        $(this).fadeTo("normal", 0.6); // マウスオーバーで透明度を60%にする
+        },function(){
+        $(this).fadeTo("normal", 1.0); // マウスアウトで透明度を100%に戻す
+        });
+    });
+
+    //4.アコーディオンメニュー
+    $(function() {
+        $('#accordion dd').hide();
+        $('#accordion dt a').click(function(){
+             $('#accordion dd').slideUp();
+             $(this).parent().next().slideDown();
+             return false;
+         });
+    });
+
+    //5.スライドパネル
+    $(function(){
+        $(".open").click(function(){
+            $("#slideBox").slideToggle("slow");
+        });
+    });
+
+    //6.タブパネル
+    $(function(){
+        $(".panel:not(:first)").hide();
+        $("#tabs a").click(function() {
+            $(".panel").hide();
+            $(".panel").filter(this.hash).show();
+            $("#tabs a").removeClass("selected");
+            $(this).addClass("selected");
+            return false;
+            }).filter(":first").click();
+    });
+
+        //基本ver.
+        $(function(){
+            $("#thumb a").click(function(){
+                var thumbSrc = $(this).attr("href")
+                $("#main img").attr("src",thumbSrc);
+            return false;
+            });
+        });
+
+        //アニメーションありver.
+        $(function(){
+            $("#thumb02 a").click(function(){
+                var thumbSrc = $(this).attr("href")
+                $("#main02 img").fadeTo("slow", 0.1 ,function() {
+                $(this).attr("src",thumbSrc).fadeTo("normal",1);
+                });
+            return false;
+            });
+        });
+
+
+      </script>
+      </body>
+    </html>
