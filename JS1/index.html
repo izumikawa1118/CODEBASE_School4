@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></script>
+  </head>
+  <body>
+    <a href="#slide" class="scroll">スライドパネルへ移動！</a>
+    <h1>タイトル</h1><h1>タイトル</h1><h1>タイトル</h1><h1>タイトル</h1><h1>タイトル</h1><h1>タイトル</h1><h1>タイトル</h1><h1>タイトル</h1>
+    <h1>タイトル</h1><h1>タイトル</h1><h1>タイトル</h1><h1>タイトル</h1><h1>タイトル</h1><h1>タイトル</h1><h1>タイトル</h1><h1>タイトル</h1>
+    <h1>タイトル</h1><h1>タイトル</h1><h1>タイトル</h1><h1>タイトル</h1><h1>タイトル</h1><h1>タイトル</h1><h1>タイトル</h1><h1>タイトル</h1>
+    <h1 id="slide">タイトル</h1>
+
+
+
+  <script>
+  jQuery.easing.quart = function (x, t, b, c, d) {
+      return -c * ((t=t/d-1)*t*t*t - 1) + b;
+  };
+
+  $(function(){
+      jQuery('.scroll').click(function() {
+          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+              var $target = jQuery(this.hash);
+              $target = $target.length && $target || jQuery('[name=' + this.hash.slice(1) +']');
+              if ($target.length) {
+              var targetOffset = $target.offset().top;
+              jQuery('html,body').animate({ scrollTop: targetOffset }, 1200, 'quart');
+              return false;
+              }
+          }
+      });
+  });
+  </script>
+  </body>
+</html>
