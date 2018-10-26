@@ -1,0 +1,89 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    </head>
+    <body>
+
+  <!--    HTML    -->
+  <h2>問1.id名『q01』のテキストカラーを赤に変更せよ</h2>
+  <p id="q01">ときどきweb</p>
+  <hr>
+  <h2>問2.id名『q02』のテキストカラーを青・背景色を黄色に変更せよ</h2>
+  <p id="q02">ときどきweb</p>
+  <hr>
+  <h2>問3.id名『q03』の空の段落にテキスト「エレン」を追加せよ</h2>
+  <p id="q03"></p>
+  <hr>
+  <h2>問4.id名『q04』「エレン」のテキストを「駆逐してやるッ!!!」に書き換えよ</h2>
+  <p id="q04">エレン</p>
+  <hr>
+  <h2>問5.id名『q05』「あああ」の内容を<a hraf=”#”>タグを含めた「いいい」に置換せよ</h2>
+  <p id="q05">あああ</p>
+  <hr>
+  <h2>問6.ul要素にclass名「aaa」を追加せよ</h2>
+  <ul id="q06">
+      <li>リスト1</li>
+      <li>リスト2</li>
+      <li>リスト3</li>
+  </ul>
+  <hr>
+  <h2>問7.問6のli要素を削除せよ</h2>
+  <ul id="q07">
+      <li>リスト1</li>
+      <li>リスト2</li>
+      <li>リスト3</li>
+  </ul>
+  <hr>
+  <h2>問8.ボタンをクリックしたら『クリックしますた』のアラート表示</h2>
+  <div class="button">ぼたん</div>
+  <hr>
+  <h2>問9.問2のスクリプトを変数aaaに代入し文字の色の値をp#q9にテキスト出力せよ</h2>
+  <p id="q9"></p>
+  <hr>
+  <h2>問10.p要素をクリックしたらclass名「bbb」を追加せよ</h2>
+  <p id="q10" class="aaa">めんま、</p>
+
+
+
+
+
+  <script>
+  $(function(){
+
+  <!--1-->
+      $("#q01").css('color','blue');
+  <!--2-->
+      $("#q02").css({'color':'red','background':'yellow'});
+  <!--3-->
+      $("#q03").text("エレン");
+  <!--4-->
+      $("#q04").text("「駆逐してやるッ!!!」");
+  <!--5-->
+      $("#q05").html('<a href="#">いいい</a>');
+  <!--6-->
+      $("#q06").addClass("aaa");
+  <!--7-->
+      $("#q07 li").remove();
+  <!--8-->
+      $(".button").click(function(){
+          alert("『クリックしますた』");
+      });
+  <!--9-->
+      var aaa = $("p").css("color");
+      $("#q9").text(aaa);
+  <!--10-->
+      $("#q10").click(function(){
+          $(this).toggleClass("bbb");
+      });
+
+  });
+  <!---->
+
+
+
+  </script>
+    </body>
+  </html>

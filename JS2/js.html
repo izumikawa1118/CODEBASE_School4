@@ -1,0 +1,22 @@
+<!DOCTYPE html> <html>
+<head>
+<meta charset="utf-8" />
+<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> </head>
+<body>
+<style type="text/css">
+.self { background-color:Yellow; }
+.sib { border: solid 1px Blue; margin: 5px } .child { background-color:aqua; }
+</style>
+<script type="text/javascript">
+$(function() { $('.execute').click(function(){
+$('ul#self'). // <div id="self">要素を取得
+prepend('<li class="child">兄</li>'). // 子要素先頭に追加
+append('<li class="child">弟</li>'). // 子要素末尾に追加
+before('<p>伯父さん</p>'). // 要素の前方に追加
+after('<p>叔父さん</p>'); // 要素の後方に追加
+}); });
+</script>
+<button class="execute">処理実行</button> <ul id="self" class="self">
+<li>子供1</li>
+<li>子供2</li>
+</ul> </body> </html>
